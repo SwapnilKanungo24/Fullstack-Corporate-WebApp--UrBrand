@@ -15,7 +15,9 @@ MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017/')
 DATABASE_NAME = 'fullstack_db'
 
 # Upload Configuration
-UPLOAD_FOLDER = 'uploads'
+# Use absolute path for Render deployment
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(BASE_DIR, 'uploads')
 PROJECTS_FOLDER = os.path.join(UPLOAD_FOLDER, 'projects')
 CLIENTS_FOLDER = os.path.join(UPLOAD_FOLDER, 'clients')
 
